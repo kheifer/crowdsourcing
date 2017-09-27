@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
+
 import {Project} from '../project.model';
+import {ProjectService} from '../project.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -9,14 +11,16 @@ import {Project} from '../project.model';
   styleUrls: ['./project-detail.component.css']
 })
 export class ProjectDetailComponent implements OnInit {
-  albumId: number = null;
+  projectId: number;
+  projectToDisplay: Project;
 
-  constructor(private incomingRoute: ActivatedRoute, private location: Location) { }
+  constructor(private incomingRoute: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.incomingRoute.params.forEach((urlParams)=>{
-      this.albumId = parseInt(urlParams['id']);
+      this.projectId = parseInt(urlParams['id']);
     });
+    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
   }
 
 }

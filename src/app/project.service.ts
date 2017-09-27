@@ -11,4 +11,12 @@ export class ProjectService {
     return PROJECTS;
   }
 
+  getProjectById(projectId: number){
+    for (var i = 0; i <= PROJECTS.length - 1; i++) {
+      if (PROJECTS[i].id === projectId) {
+        return PROJECTS[i];
+      }
+    }
+  }
+
 }
