@@ -1,3 +1,9 @@
-<p>
-  projects works!
-</p>
+<h2>List of current sourceables:</h2>
+
+<div class="well">
+  <div *ngFor ="let project of projects" class="panel panel-default">
+    <div class="panel-body"  (click)="goToDetail(project)">
+      <h3><em>{{project.title}}: </em><hr>Needs: {{project.amount}}</h3>
+    </div>
+  </div>
+</div>
