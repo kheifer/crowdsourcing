@@ -1,8 +1,11 @@
 <div class="well">
   <div class="panel panel-default">
-    <div class="panel-heading"></div>
+    <div class="panel-heading">{{projectToDisplay.title}}</div>
     <div class="panel-body">
-      
+      <h4>by:{{projectToDisplay.starters}}</h4>
+      <h4>target: $ {{ projectToDisplay.amount.toLocaleString() }}</h4>
+      <h5>{{projectToDisplay.funded}}</h5>
+      <p>{{projectToDisplay.reason}}</p>
     </div>
   </div>
 </div>

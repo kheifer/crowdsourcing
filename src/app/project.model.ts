@@ -1,7 +1,5 @@
 export class Project {
-  public funded: number;
-  constructor(
-              public title: string,
+  constructor(public title: string,
               public starters: string,
               public amount: number,
               public reason: string,
@@ -9,4 +7,7 @@ export class Project {
               public type: string,
               public id: number
   ){}
+
+  public funded: number = 0;
+
 }
